@@ -6,7 +6,8 @@ import re
 from glob import glob as glob
 
 from reconstructors import EpiReconstructor, GemReconstructor, \
-     MpflashReconstructor, ModMpflashReconstructor, Reconstructor
+     MpflashReconstructor, ModMpflashReconstructor, \
+     Mp3flashReconstructor, Reconstructor
 
 from pipeline import Pipeline
 
@@ -169,6 +170,10 @@ class MpflashFIDContainer(OneFIDContainer):
 class ModMpflashFIDContainer(OneFIDContainer):
     reconstructor = ModMpflashReconstructor
     fid_type = 'mod mpflash'
+
+
+class Mp3flashFIDContainer(MpflashFIDContainer):
+    reconstructor = Mp3flashReconstructor
 
 
 class EpiFIDContainer(FIDContainer):

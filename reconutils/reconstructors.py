@@ -126,3 +126,9 @@ class ModMpflashReconstructor(MpflashReconstructor):
         ''' Operations between simple read and write '''
         ops = [FixPEOrder()]
         return ops + super(MpflashReconstructor, self)._extra_operations()
+
+
+class Mp3flashReconstructor(MpflashReconstructor):
+    ''' Modfied 3D MPFLASH reconstruction '''
+    _op_defs = (
+            ('InverseFFT3D',{}),)
